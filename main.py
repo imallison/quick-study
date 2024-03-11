@@ -20,16 +20,16 @@ def quiz(questions):
         # Tuple from earlier
         print(question)
 
-        user_input = input("Your answer: ").strip()
+        user_input = input("Your answer (input the letter only): ").strip()
         if user_input.lower() == correct_answer.lower():
-            print(f"Correct! Your score is currently {score}.")
             score += 1
+            print(f"Correct! Your score is currently {score}.")
         else:
-            print(f"Incorrect! The correct answer was: {correct_answer}.")
+            print(f"Incorrect! Your score is currently {score}.\nThe correct answer was: {correct_answer}.")
         print()
 
     print(f"You've completed all the questions!\nScore: {score}/{len(questions)}")
 
 if __name__ == "__main__":
-    questions = load_questions(r"C:\-AL-\all projects\vs code projects\personal-projects\quick-study\qa.csv")
+    questions = load_questions(r"C:\-AL-\all projects\vs code projects\personal-projects\quick-study\questions.csv")
     quiz(questions)
