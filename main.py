@@ -6,7 +6,7 @@ def load_questions(file_name):
     with open(file_name, "r") as file_handler:
         csv_reader = csv.DictReader(file_handler)
         for row in csv_reader:
-            question_answer = (row['Question'], row['Answer'])
+            question_answer = (row['Question'], row['Option A'], row['Option B'], row['Option C'], row['Option D'], row['Answer'])
             questions.append(question_answer)
     return questions
 
@@ -16,9 +16,13 @@ def quiz(questions):
     # Shuffle
     random.shuffle(questions)
 
-    for question, correct_answer in questions:
+    for question, optionA, optionB, optionC, optionD, correct_answer in questions:
         # Tuple from earlier
         print(question)
+        print(f"A. {optionA}")
+        print(f"B. {optionB}")
+        print(f"C. {optionC}")
+        print(f"D. {optionD}\n")
 
         user_input = input("Your answer (input the letter only): ").strip()
         if user_input.lower() == correct_answer.lower():
