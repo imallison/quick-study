@@ -1,1 +1,1 @@
-# quick-study
+# Quick Study
